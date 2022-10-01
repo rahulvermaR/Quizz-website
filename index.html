@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Quizz | Test</title>
+  </head>
+  <body>
+    <section class="section1 grid--col">
+      <img src="./giphy.webp" alt="coading gif" />
+      <div class="starting--page">
+        <h1 class="heading">Java Multiple Choice Question Test</h1>
+        <button class="btn--start--test" type="button">
+          Start your test now &rarr;
+        </button>
+      </div>
+    </section>
+    <section class="section2 d--none">
+      <p class="pagination"><span class="pageNumber">1</span> / 5</p>
+      <div class="question--section" id="q-1">
+        <div class="question--box">
+          <p class="question">
+            Which of the following is a valid syntax to synchronize the HashMap?
+          </p>
+          <p class="options--text">Select your answer</p>
+
+          <div class="options--box">
+            <div class="option" id="a">Map m = hashMap.synchronizeMap();</div>
+            <div class="option" id="b">
+              HashMap map =hashMap.synchronizeMap();
+            </div>
+            <div class="option" id="c">
+              Map m1 = Collections.synchronizedMap(hashMap);
+            </div>
+            <div class="option" id="d">
+              Map m2 = Collection.synchronizeMap(hashMap);
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question--section d--none" id="q-2">
+        <div class="question--box">
+          <p class="question">Which option is false about the final keyword?</p>
+          <p class="options--text">Select your answer</p>
+
+          <div class="options--box">
+            <div class="option" id="a">
+              A final method cannot be overridden in its subclasses.
+            </div>
+            <div class="option" id="b">A final class cannot be extended.</div>
+            <div class="option" id="c">
+              A final class cannot extend other classes.
+            </div>
+            <div class="option" id="d">A final method can be inherited.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question--section d--none" id="q-3">
+        <div class="question--box">
+          <p class="question">
+            What is the default encoding for an OutputStreamWriter?
+          </p>
+          <p class="options--text">Select your answer</p>
+
+          <div class="options--box">
+            <div class="option" id="a">UTF-8</div>
+            <div class="option" id="b">
+              Default encoding of the host platform
+            </div>
+            <div class="option" id="c">UTF-12</div>
+            <div class="option" id="d">None of the above</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question--section d--none" id="q-4">
+        <div class="question--box">
+          <p class="question">
+            What is the initial quantity of the ArrayList list?
+          </p>
+          <p class="options--text">Select your answer</p>
+
+          <div class="options--box">
+            <div class="option" id="a">5</div>
+            <div class="option" id="b">10</div>
+            <div class="option" id="c">0</div>
+            <div class="option" id="d">100</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question--section d--none" id="q-5">
+        <div class="question--box">
+          <p class="question">
+            Which of the given methods are of Object class?
+          </p>
+          <p class="options--text">Select your answer</p>
+
+          <div class="options--box">
+            <div class="option" id="a">
+              notify(), wait( long msecs ), and synchronized()
+            </div>
+            <div class="option" id="b">
+              wait( long msecs ), interrupt(), and notifyAll()
+            </div>
+            <div class="option" id="c">notify(), notifyAll(), and wait()</div>
+            <div class="option" id="d">
+              sleep( long msecs ), wait(), and notify()
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn--nav--box">
+        <button class="prev">&larr; Previous question</button>
+        <button class="next">Next question &rarr;</button>
+        <button class="finish d--none">Finish Test</button>
+      </div>
+      <div class="display--messege d--none">
+        <div><span class="messege"></span> out of 5</div>
+      </div>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

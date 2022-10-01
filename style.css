@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #223682;
+}
+
+.section1 {
+  max-width: 60rem;
+  height: 100vh;
+  margin: 0 auto;
+}
+.grid--col {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 6fr;
+}
+img {
+  max-width: 20rem;
+  height: 20rem;
+  align-self: center;
+  justify-self: center;
+  border-radius: 19px;
+  box-shadow: 0 0 25px 1px #fb0b0b;
+}
+.starting--page {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  margin-bottom: 3rem;
+  font-size: 3.2rem;
+  color: #ffd000;
+}
+.btn--start--test {
+  cursor: pointer;
+  font-size: 2.4rem;
+  padding: 1.2rem 2.4rem;
+  display: inline;
+  border-radius: 9px;
+  color: #223682;
+  border: none;
+  box-shadow: 0 0 5px 1px #0c3e83;
+}
+.section2 {
+  margin: 0 auto;
+  max-width: 60rem;
+}
+.question--section {
+  max-width: 60rem;
+
+  margin: 0 auto;
+}
+.pagination {
+  padding-top: 6.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7586b4;
+  padding-bottom: 2rem;
+}
+.pageNumber {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7586b4;
+}
+
+.question {
+  /* margin: 2rem 0 3.2rem 0; */
+  height: 7.2rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #9eb2e9;
+}
+.options--text {
+  color: #7586b4;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+/* .options--box {
+} */
+
+.option {
+  cursor: pointer;
+  padding-left: 2rem;
+  border-radius: 9px;
+  height: 5.8rem;
+  color: #ddd;
+  background-color: #4d5b92;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+.option:last-child {
+  margin-bottom: 0rem;
+}
+.option:hover {
+  background-color: #ffd000;
+  color: #000;
+}
+
+.btn--nav--box {
+  padding-top: 3rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+}
+.prev {
+  cursor: pointer;
+  margin-top: 3rem;
+  background-color: #223682;
+  border: none;
+  font-size: 2rem;
+  color: #ddd;
+  padding: 1.2rem 2.4rem;
+}
+.next {
+  cursor: pointer;
+  margin-top: 3rem;
+  background-color: #223682;
+  border: none;
+  font-size: 2rem;
+  color: #ddd;
+  padding: 1.2rem 2.4rem;
+}
+.finish {
+  cursor: pointer;
+  margin-top: 3rem;
+  background-color: #223682;
+  border: none;
+  font-size: 2rem;
+  color: #ddd;
+  border: 1px solid #4d5b92;
+  padding: 1.2rem 2.4rem;
+}
+
+.display--messege {
+  margin: 0 auto;
+  max-width: 60rem;
+  text-align: center;
+  font-size: 4rem;
+  color: #ffd000;
+  margin-top: 2rem;
+  background-color: red;
+}
+.btn--start--test:hover,
+.next:hover,
+.prev:hover,
+.finish:hover {
+  background-color: #9eb2cd;
+}
+.next:hover,
+.prev:hover,
+.finish:hover {
+  color: #222;
+}
+
+.d--none {
+  display: none;
+}
+@media (max-width: 600px) {
+  .heading {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .btn--start--test {
+    font-size: 1.8rem;
+    padding: 1.2rem 0rem;
+  }
+  .pagination {
+    padding-top: 2rem;
+    padding-left: 3rem;
+  }
+  .options--text {
+    padding-left: 1rem;
+  }
+  .question {
+    /* height: 9.6rem; */
+    font-size: 2rem;
+    padding-left: 2rem;
+  }
+  .options--box {
+    padding: 1rem;
+  }
+  .option {
+    height: 6.2rem;
+    font-size: 1.6rem;
+  }
+  .prev {
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+  .next {
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+  .finish {
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+  .display--messege {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 300px) {
+  img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .pagination {
+    padding-top: 0.5rem;
+  }
+  .option {
+    height: 7.2rem;
+    font-size: 1.3rem;
+  }
+  .question {
+    height: 5.5rem;
+    font-size: 1.3rem;
+  }
+  .display--messege {
+    font-size: 2.4rem;
+    margin-top: 1rem;
+  }
+  .btn--nav--box {
+    padding-top: 1rem;
+  }
+  .display--messege {
+    font-size: 2.4rem;
+    margin-top: 4rem;
+  }
+}
