@@ -15,6 +15,7 @@ const question4El = document.querySelector("#q-4");
 const question5El = document.querySelector("#q-5");
 
 const questionBox = document.querySelectorAll(".options--box");
+const op = document.querySelectorAll(".option");
 
 let page = 0;
 const questions = [
@@ -62,6 +63,17 @@ btnPrevQEl.addEventListener("click", function () {
 document.addEventListener("click", function () {
   questionBox[page].addEventListener("click", function (args) {
     selectedOptions[page] = args.path[0].id;
+    args.path[0]
+      .closest(".options--box")
+      .querySelectorAll(".option")
+      .forEach((ele) => {
+        ele.classList.remove("active");
+      });
+    args.path[0].classList.add("active");
+    // console.log(
+    //   args.path[0].closest(".options--box").querySelectorAll(".option")
+    // );
+
     // console.log(args.path[0].id);
     // console.log(selectedOptions);
     // console.log(questionBox[page]);
