@@ -25,7 +25,9 @@ jobs:
       - name: Send Discord notification
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          REPO_NAME: ${{ github.repository }}
+          COMMIT_AUTHOR: ${{ github.actor }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"content": "Code has been pushed to the repository!"}' $DISCORD_WEBHOOK_URL
-
+          curl -X POST -H "Content-Type: application/json" -d '{"content": "New code has been pushed to the repository:\n\nRepository: $REPO_NAME\nPushed by: $COMMIT_AUTHOR\nCommit Message: $COMMIT_MESSAGE"}' $DISCORD_WEBHOOK_URL
 
