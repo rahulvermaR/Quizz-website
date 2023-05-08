@@ -28,7 +28,10 @@ jobs:
           REPO_NAME: ${{ github.repository }}
           COMMIT_AUTHOR: ${{ github.actor }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_SHA: ${{ github.sha }}
+          COMMIT_URL: ${{ github.event.repository.html_url }}/commit/${{ github.sha }}
+          COMMIT_TIMESTAMP: ${{ github.event.head_commit.timestamp }}
+          COMMIT_BRANCH: ${{ github.ref }}
         run: |
-          MESSAGE="New code has been pushed to the repository:\n\nRepository: \`$REPO_NAME\`\nPushed by: \`$COMMIT_AUTHOR\`\n\n\`\`\`\n$COMMIT_MESSAGE\n\`\`\`"
-          PAYLOAD="{\"content\": \"$MESSAGE\"}"
+          PAYLOAD="{\"embeds\": [{\"author\": {\"name\": \"${COMMIT_AUTHOR}\", \"icon_url\": \"${{ github.event.sender.avatar_url }}\"}, \"title\": \"New code has been pushed to the repository\", \"description\": \"Repository: ${REPO_NAME}\", \"color\": 3447003, \"fields\": [{\"name\": \"Commit\", \"value\": \"[${COMMIT_SHA}](${COMMIT_URL})\", \"inline\": true}, {\"name\": \"Message\", \"value\": \"\`\`\`${COMMIT_MESSAGE}\`\`\`\", \"inline\": true}, {\"name\": \"Branch\", \"value\": \"${COMMIT_BRANCH}\", \"inline\": true}], \"footer\": {\"text\": \"Commit Timestamp: ${COMMIT_TIMESTAMP}\"}}]}"
           curl -X POST -H "Content-Type: application/json" -d "$PAYLOAD" $DISCORD_WEBHOOK_URL
