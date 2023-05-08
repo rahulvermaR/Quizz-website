@@ -22,11 +22,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Get repository name
+        id: repo
+        run: echo "::set-output name=REPO_NAME::$(basename $GITHUB_REPOSITORY)"
+
       - name: Send Discord notification
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          REPO_NAME: ${{ env.GITHUB_REPOSITORY }}
+          REPO_NAME: ${{ steps.repo.outputs.REPO_NAME }}
           COMMIT_AUTHOR: ${{ github.actor }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"pushed to the repository:\\n\\nRepository: $REPO_NAME\\nPushed by: $COMMIT_AUTHOR\\nCommit Message: $COMMIT_MESSAGE\"}" $DISCORD_WEBHOOK_URL
+          curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"New code has been pushed to the repository:\\n\\nRepository: $REPO_NAME\\nPushed by: $COMMIT_AUTHOR\\nCommit Message: $COMMIT_MESSAGE\"}" $DISCORD_WEBHOOK_URL
